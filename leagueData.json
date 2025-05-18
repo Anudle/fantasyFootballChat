@@ -1,0 +1,1102 @@
+{
+  "fantasy_content": {
+    "xml:lang": "en-US",
+    "yahoo:uri": "/fantasy/v2/league/449.l.438606/teams",
+    "league": [
+      {
+        "league_key": "449.l.438606",
+        "league_id": "438606",
+        "name": "Monarch United Fantasy",
+        "url": "https://football.fantasysports.yahoo.com/2024/f1/438606",
+        "logo_url": false,
+        "draft_status": "postdraft",
+        "num_teams": 14,
+        "edit_key": "17",
+        "weekly_deadline": "",
+        "league_update_timestamp": "1736408316",
+        "scoring_type": "head",
+        "league_type": "private",
+        "renew": "423_658004",
+        "renewed": "",
+        "felo_tier": "silver",
+        "iris_group_chat_id": "",
+        "allow_add_to_dl_extra_pos": 0,
+        "is_pro_league": "0",
+        "is_cash_league": "0",
+        "current_week": "17",
+        "start_week": "1",
+        "start_date": "2024-09-05",
+        "end_week": "17",
+        "end_date": "2024-12-30",
+        "is_finished": 1,
+        "is_plus_league": "0",
+        "game_code": "nfl",
+        "season": "2024"
+      },
+      {
+        "teams": {
+          "0": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.1"
+                },
+                {
+                  "team_id": "1"
+                },
+                {
+                  "name": "Garipp Bowls"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/1"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/39245219703_3f1067.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 54
+                },
+                {
+                  "number_of_trades": "3"
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 8
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "D",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/1/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "1",
+                        "nickname": "___",
+                        "guid": "CSLDMGN6LBKVRWEGSV7BGYVAIQ",
+                        "is_commissioner": "1",
+                        "image_url": "https://s.yimg.com/ag/images/1864/39575518793_f1a956_64sq.jpg",
+                        "felo_score": "720",
+                        "felo_tier": "gold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "1": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.2"
+                },
+                {
+                  "team_id": "2"
+                },
+                {
+                  "name": "Calvins Cutthroats"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/2"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/57360791754_cc8fab.jpg"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 16
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                {
+                  "clinched_playoffs": 1
+                },
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 4
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "D",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/2/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "2",
+                        "nickname": "Extreme Dan",
+                        "guid": "L5MZE2D3WSEPRPEGC5CN4JLYRA",
+                        "image_url": "https://s.yimg.com/ag/images/1741/27020433117_48bcad_64sq.jpg",
+                        "felo_score": "598",
+                        "felo_tier": "bronze"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "2": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.3"
+                },
+                {
+                  "team_id": "3"
+                },
+                {
+                  "name": "Cow Bellz"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/3"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/cv/apiv2/default/nfl/nfl_3.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 8
+                },
+                {
+                  "number_of_trades": "1"
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 11
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "B-",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/3/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "3",
+                        "nickname": "Kyle",
+                        "guid": "G22HQKCIVLARN3Z6KD7EXDON3Y",
+                        "image_url": "https://s.yimg.com/ag/images/default_user_profile_pic_64sq.jpg",
+                        "felo_score": "526",
+                        "felo_tier": "bronze"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "3": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.4"
+                },
+                {
+                  "team_id": "4"
+                },
+                {
+                  "name": "The Baker Mayfields"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/4"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/42703117980_3a369e.jpg"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 25
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                {
+                  "clinched_playoffs": 1
+                },
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 9
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "D",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/4/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "4",
+                        "nickname": "Barry",
+                        "guid": "BYDYBHHKJSEJASWIRCWNKZNXHY",
+                        "image_url": "https://s.yimg.com/ag/images/82a39ed5-fe0a-4e58-af79-decbd86aea21_64sq.jpg",
+                        "felo_score": "688",
+                        "felo_tier": "silver"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "4": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.5"
+                },
+                {
+                  "team_id": "5"
+                },
+                {
+                  "name": "Anubis"
+                },
+                {
+                  "is_owned_by_current_login": 1
+                },
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/5"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/35789482623_ad6141.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 38
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 3
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "A+",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/5/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "5",
+                        "nickname": "Anu",
+                        "guid": "ACGQGXSQBAWA75PCDF3GMNRSB4",
+                        "is_current_login": "1",
+                        "image_url": "https://s.yimg.com/ag/images/4472/26337144049_4834c3_64sq.jpg",
+                        "felo_score": "647",
+                        "felo_tier": "silver"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "5": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.6"
+                },
+                {
+                  "team_id": "6"
+                },
+                {
+                  "name": "GlennAgain"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/6"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/cv/apiv2/default/nfl/nfl_12.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 8
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                {
+                  "clinched_playoffs": 1
+                },
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 14
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "C",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/6/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "6",
+                        "nickname": "kyle",
+                        "guid": "ULN52TOBO5KDWBZV2D3MJGSAME",
+                        "image_url": "https://s.yimg.com/ag/images/default_user_profile_pic_64sq.jpg",
+                        "felo_score": "705",
+                        "felo_tier": "gold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "6": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.7"
+                },
+                {
+                  "team_id": "7"
+                },
+                {
+                  "name": "LUCAS'S LUCKY LIONS"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/7"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/cv/apiv2/default/nfl/nfl_10.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 13
+                },
+                {
+                  "number_of_trades": "1"
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                {
+                  "clinched_playoffs": 1
+                },
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 12
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "D",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/7/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "7",
+                        "nickname": "Lucas",
+                        "guid": "QWVWYGSMOO4C7PZSOZUDSXSEQI",
+                        "image_url": "https://s.yimg.com/ag/images/default_user_profile_pic_64sq.jpg",
+                        "felo_score": "735",
+                        "felo_tier": "gold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "7": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.8"
+                },
+                {
+                  "team_id": "8"
+                },
+                {
+                  "name": "Leapfrog Clause"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/8"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/28995945911_e4c79c1027.jpg"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 58
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                {
+                  "clinched_playoffs": 1
+                },
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 5
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "B-",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/8/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "8",
+                        "nickname": "Matt Ruske",
+                        "guid": "WBNS5STZDTQ7RVHEU2BUTGMKNA",
+                        "image_url": "https://s.yimg.com/ag/images/4569/38182147480_9adc63_64sq.jpg",
+                        "felo_score": "798",
+                        "felo_tier": "gold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "8": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.9"
+                },
+                {
+                  "team_id": "9"
+                },
+                {
+                  "name": "This One's for John"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/9"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/cv/apiv2/default/nfl/nfl_3_d.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 29
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 7
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "A+",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/9/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "9",
+                        "nickname": "David Morris",
+                        "guid": "TELYPCWXEGQ62H6HUFSOG7XGA4",
+                        "image_url": "https://s.yimg.com/ag/images/default_user_profile_pic_64sq.jpg",
+                        "felo_score": "637",
+                        "felo_tier": "silver"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "9": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.10"
+                },
+                {
+                  "team_id": "10"
+                },
+                {
+                  "name": "Super Mega Awesome ✨"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/10"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/cv/apiv2/default/nfl/nfl_11.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 7
+                },
+                {
+                  "number_of_trades": "1"
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 10
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "A",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/10/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "10",
+                        "nickname": "Jason Cashdollar",
+                        "guid": "SLVBN27RUKSYJ57JLI5TDGUZ6I",
+                        "image_url": "https://s.yimg.com/ag/images/default_user_profile_pic_64sq.jpg",
+                        "felo_score": "556",
+                        "felo_tier": "bronze"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "10": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.11"
+                },
+                {
+                  "team_id": "11"
+                },
+                {
+                  "name": "TN Gamblers"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/11"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/cv/apiv2/default/nfl/nfl_9.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 9
+                },
+                {
+                  "number_of_trades": "1"
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                {
+                  "clinched_playoffs": 1
+                },
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 1
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "B",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/11/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "11",
+                        "nickname": "TN",
+                        "guid": "LS5T5NNG6LWSTOTCNDW442HNXQ",
+                        "image_url": "https://s.yimg.com/ag/images/4582/23758168687_e3a07b_64sq.jpg",
+                        "felo_score": "599",
+                        "felo_tier": "bronze"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "11": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.12"
+                },
+                {
+                  "team_id": "12"
+                },
+                {
+                  "name": "BowleyCowley"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/12"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/6e22f310d1fce689bd2a762f3ce2c02c578b4e0f30815f81d3772f090add31c5.jpg"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 80
+                },
+                {
+                  "number_of_trades": "4"
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                {
+                  "clinched_playoffs": 1
+                },
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 6
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "D-",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/12/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "12",
+                        "nickname": "kevin C",
+                        "guid": "O77EFQNXMML2EPXX2WB6KDSPCA",
+                        "image_url": "https://s.yimg.com/ag/images/4574/37947588500_923055_64sq.jpg",
+                        "felo_score": "604",
+                        "felo_tier": "silver"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "12": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.13"
+                },
+                {
+                  "team_id": "13"
+                },
+                {
+                  "name": "O-moss-em"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/13"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/1f84768cbe40cdb8a9eb114fa6d275c1925f985579ba9dfa29a50b7781281865.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 30
+                },
+                {
+                  "number_of_trades": "1"
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                {
+                  "clinched_playoffs": 1
+                },
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 2
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "A-",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/13/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "13",
+                        "nickname": "Michael",
+                        "guid": "TCRAQCQRXL46MFLYHIDK4XU5TU",
+                        "image_url": "https://s.yimg.com/ag/images/default_user_profile_pic_64sq.jpg",
+                        "felo_score": "535",
+                        "felo_tier": "bronze"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "13": {
+            "team": [
+              [
+                {
+                  "team_key": "449.l.438606.t.14"
+                },
+                {
+                  "team_id": "14"
+                },
+                {
+                  "name": "Tebow’s Purity Ring"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/2024/f1/438606/14"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/cv/apiv2/default/nfl/nfl_4.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                [],
+                [],
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": 18,
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                {
+                  "draft_position": 13
+                },
+                {
+                  "has_draft_grade": 1,
+                  "draft_grade": "D+",
+                  "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/14/draftrecap"
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "manager_id": "14",
+                        "nickname": "Ankit",
+                        "guid": "S2AZY2R5ULKPBDRZZUHD7OLQH4",
+                        "image_url": "https://s.yimg.com/ag/images/default_user_profile_pic_64sq.jpg",
+                        "felo_score": "547",
+                        "felo_tier": "bronze"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "count": 14
+        }
+      }
+    ],
+    "time": "54.661989212036ms",
+    "copyright": "Certain Data by Sportradar, Stats Perform and Rotowire",
+    "refresh_rate": "60"
+  }
+}

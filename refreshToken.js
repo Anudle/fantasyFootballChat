@@ -1,35 +1,41 @@
 // refreshToken.js
-const fs = require('fs');
-const { create } = require('simple-oauth2');
+import fs from "fs";
+import axios from "axios";
+import "dotenv/config";
 
-const config = {
-  client: {
-    id: 'YOUR_CLIENT_ID',
-    secret: 'YOUR_CLIENT_SECRET',
-  },
-  auth: {
-    tokenHost: 'https://api.login.yahoo.com',
-    tokenPath: '/oauth2/get_token',
-  },
-};
+const TOKEN_URL = "https://api.login.yahoo.com/oauth2/get_token";
 
-const client = create(config);
+export async function refreshYahooToken() {
+  const tokenData = JSON.parse(fs.readFileSync("auth.json"));
+  const refreshToken = tokenData.refresh_token;
 
-async function refreshAccessToken() {
-  const tokenData = JSON.parse(fs.readFileSync('auth.json'));
-  const token = client.accessToken.create(tokenData);
+  const params = new URLSearchParams();
+  params.append("grant_type", "refresh_token");
+  params.append("refresh_token", refreshToken);
 
   try {
-    const refreshed = await token.refresh();
-    console.log('✅ Refreshed Access Token:', refreshed.token.access_token);
+    const response = await axios.post(TOKEN_URL, params, {
+      headers: {
+        Authorization: `Basic ${Buffer.from(
+          `${process.env.YAHOO_CLIENT_ID}:${process.env.YAHOO_CLIENT_SECRET}`
+        ).toString("base64")}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    });
 
-    // Save new token to file
-    fs.writeFileSync('auth.json', JSON.stringify(refreshed.token, null, 2));
-    console.log('💾 Token updated in auth.json');
-    return refreshed.token;
-  } catch (err) {
-    console.error('❌ Token refresh failed:', err.message);
+    const newToken = response.data;
+    newToken.expires_at = new Date(Date.now() + newToken.expires_in * 1000);
+
+    fs.writeFileSync("auth.json", JSON.stringify(newToken, null, 2));
+    console.log("🔄 Refreshed access token saved to auth.json");
+    return newToken.access_token;
+  } catch (error) {
+    console.error("❌ Failed to refresh Yahoo token:", error.message);
+    return null;
   }
 }
 
-refreshAccessToken();
+// Run directly
+if (process.argv[1].includes("refreshToken.js")) {
+  refreshYahooToken();
+}
