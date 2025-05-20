@@ -19,8 +19,7 @@ const config = {
 
 const client = new AuthorizationCode(config);
 const app = express();
-const redirectUri =
-  "https://38a2-2601-601-c01-371b-e8ca-3db5-ee6b-7b08.ngrok-free.app/callback";
+const redirectUri = "https://fantasyfootballchat.onrender.com/callback";
 
 const authorizationUri = client.authorizeURL({
   redirect_uri: redirectUri,
