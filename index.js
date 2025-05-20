@@ -27,14 +27,7 @@ const authorizationUri = client.authorizeURL({
 });
 
 app.get("/auth", (req, res) => {
-  open(authorizationUri);
-  res.send(`
-    <html>
-      <body style="background:#111;color:#fff;font-family:sans-serif;text-align:center;padding-top:40px;">
-        Redirecting to Yahoo login...
-      </body>
-    </html>
-  `);
+  res.redirect(authorizationUri);
 });
 
 app.get("/callback", async (req, res) => {
