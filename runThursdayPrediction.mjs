@@ -1,12 +1,12 @@
 // runThursdayPrediction.mjs
-import { getAccessToken } from "./getAccessToken.js";
-import { teamRosters } from "./mockTeamRosters.js";
+// import { getAccessToken } from "./getAccessToken.js";
+import { teamRosters } from "./mocks/mockTeamRosters.js";
 import { generateGroqPrediction } from "./generateGroqPrediction.js";
 import { detectLineupOffenders } from "./detectLineupOffenders.js";
 
 const WEEK = 6; // adjust this manually or automate if needed
 
-const accessToken = await getAccessToken();
+// const accessToken = await getAccessToken();
 const teams = await teamRosters();
 
 for (const team of teams) {
