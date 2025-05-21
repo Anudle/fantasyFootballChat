@@ -27,14 +27,7 @@ const authorizationUri = client.authorizeURL({
 });
 
 app.get("/auth", (req, res) => {
-  open(authorizationUri);
-  res.send(`
-    <html>
-      <body style="background:#111;color:#fff;font-family:sans-serif;text-align:center;padding-top:40px;">
-        Redirecting to Yahoo login...
-      </body>
-    </html>
-  `);
+  res.redirect(authorizationUri);
 });
 
 app.get("/callback", async (req, res) => {
@@ -47,6 +40,10 @@ app.get("/callback", async (req, res) => {
 
   try {
     const accessToken = await client.getToken(tokenParams);
+    console.log("\n✅ Add the following to your .env:");
+    console.log(`ACCESS_TOKEN=${accessToken.token.access_token}`);
+    console.log(`REFRESH_TOKEN=${accessToken.token.refresh_token}`);
+
     fs.writeFileSync("auth.json", JSON.stringify(accessToken.token, null, 2));
     res.send(`
       <html>

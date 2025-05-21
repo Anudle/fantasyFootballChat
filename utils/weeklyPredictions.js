@@ -1,6 +1,6 @@
 // weeklyPredictions.js
-import { mockMatchups } from "./mocks/mockMatchups.js";
-import { generatePrediction } from "./utils/generatePrediction.js";
+import { mockMatchups } from "../mocks/mockMatchups.js";
+import { generatePrediction } from "./generatePrediction.js";
 
 async function compileWeeklyPredictions() {
   console.log("🔥 WEEKLY MATCHUP PREDICTIONS 🔥\n");

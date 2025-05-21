@@ -1,4 +1,4 @@
-import generateTrashTalk from "./utils/generateTrashTalk.js";
+import generateTrashTalk from "../utils/generateTrashTalk.js";
 
 (async () => {
   const message = await generateTrashTalk(

@@ -1,13 +1,16 @@
 // refreshToken.js
-import fs from "fs";
 import axios from "axios";
 import "dotenv/config";
 
 const TOKEN_URL = "https://api.login.yahoo.com/oauth2/get_token";
 
 export async function refreshYahooToken() {
-  const tokenData = JSON.parse(fs.readFileSync("auth.json"));
-  const refreshToken = tokenData.refresh_token;
+  const refreshToken = process.env.REFRESH_TOKEN;
+
+  if (!refreshToken) {
+    console.error("❌ No REFRESH_TOKEN found in environment.");
+    return null;
+  }
 
   const params = new URLSearchParams();
   params.append("grant_type", "refresh_token");
@@ -24,10 +27,14 @@ export async function refreshYahooToken() {
     });
 
     const newToken = response.data;
-    newToken.expires_at = new Date(Date.now() + newToken.expires_in * 1000);
+    const expiresAt = new Date(Date.now() + newToken.expires_in * 1000);
 
-    fs.writeFileSync("auth.json", JSON.stringify(newToken, null, 2));
-    console.log("🔄 Refreshed access token saved to auth.json");
+    // 🔒 Log so you can copy-paste into .env or Render
+    console.log("\n✅ New tokens (update your .env or Render environment):");
+    console.log(`ACCESS_TOKEN=${newToken.access_token}`);
+    console.log(`REFRESH_TOKEN=${newToken.refresh_token}`);
+    console.log(`Expires at: ${expiresAt.toISOString()}`);
+
     return newToken.access_token;
   } catch (error) {
     console.error("❌ Failed to refresh Yahoo token:", error.message);
