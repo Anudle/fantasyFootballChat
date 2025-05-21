@@ -13,12 +13,17 @@ export async function generateGroqPrediction({
   const offenderList = offenders
     .map((o) => `- ${o.name} (${o.reason})`)
     .join("\n");
-  const flavor = funFacts.join(", ");
+
+  // Choose one random fun fact or an empty string
+  const flavor =
+    Math.random() < 0.2
+      ? ""
+      : funFacts[Math.floor(Math.random() * funFacts.length)];
 
   const prompt = `
 You're an expert fantasy football analyst with a dry sense of humor. It's Thursday of Week ${week}.\n
 The team "${teamName}" has some questionable lineup decisions:\n${offenderList}\n
-The manager is known for: ${flavor}.\n
+${flavor ? `The manager is known for: ${flavor}.\n` : ""}
 Write a short, clever 2–3 sentence blurb predicting this team's fate this week — ideally with a light warning or jab. Avoid being mean. Be fun.`;
 
   try {

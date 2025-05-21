@@ -19,7 +19,7 @@ export async function teamRosters() {
         {
           name: { full: "Kareem Hunt" },
           bye_weeks: { week: 6 },
-          status: null,
+          status: "O",
           selected_position: [null, { position: "RB" }],
         },
       ],
@@ -31,7 +31,7 @@ export async function teamRosters() {
         {
           name: { full: "Calvin Ridley" },
           bye_weeks: { week: 5 },
-          status: "O",
+          status: null,
           selected_position: [null, { position: "WR" }],
         },
       ],

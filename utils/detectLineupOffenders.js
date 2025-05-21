@@ -1,7 +1,7 @@
 // detectLineupOffenders.js
 // Returns an array of players who are on bye or have OUT/IR/D status
 
-export function detectLineupOffenders(players = [], currentWeek = 6) {
+export function detectLineupOffenders(players = [], currentWeek) {
   const offenders = [];
 
   for (const player of players) {

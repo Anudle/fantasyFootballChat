@@ -12,7 +12,7 @@ Fantasy football matchup:
 ${teamA}: ${projA} projected points
 ${teamB}: ${projB} projected points
 
-Predict the winner and add a witty, trash-talking one-liner. Keep it under 3 sentences. IF the teams scores are within 5 points make a prediction based on the players' matchups. You don't need to call out you're making "within 5 points" predicitions
+Predict the winner and add a witty, trash-talking one-liner. Keep it under 3 sentences. Feel free to throw in an upset. 
 
 `;
 

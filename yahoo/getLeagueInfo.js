@@ -2,7 +2,7 @@ import fs from "fs";
 import fetch from "node-fetch";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { refreshYahooToken } from "./refreshToken.js";
+import { refreshYahooToken } from "../refreshToken.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
