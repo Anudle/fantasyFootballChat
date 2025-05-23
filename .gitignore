@@ -64,4 +64,5 @@ node_modules/
 
 # dotenv environment variables file
 .env
-auth.json.env
+auth.json
+.env
