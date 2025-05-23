@@ -1,43 +1,43 @@
-// generateRoast.js
-import axios from "axios";
-import "dotenv/config";
+// utils/generateGenericRoast.js
+import axios from 'axios';
+import 'dotenv/config';
 
-const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
+const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
-export async function generateRoast(teamName, offenders, funFacts, week = 6) {
-  const offenderList = offenders
-    .map((o) => `- ${o.name} (${o.reason})`)
-    .join("\n");
-
-  // Pick a random fun fact
-  const personality = funFacts[Math.floor(Math.random() * funFacts.length)];
+export async function generateRoast({ firstName, teamName, flavor, players }) {
+  const playerList = players.map(p => `- ${p}`).join('\n');
 
   const prompt = `
-Generate a sarcastic, funny fantasy football roast for the team "${teamName}" who is receiving the Week ${week} John Wineman Award.\n
-They started these questionable players:\n${offenderList}\n
-This manager is known for: ${personality}.\n
-Make it playful, creative, and no more than 2 sentences.`;
+You're a fantasy football commentator known for sharp wit and dry humor.
+You're writing a roast for owners name: "${firstName}, team name: ${teamName}".
+
+Here's the team's current roster:
+${playerList}
+
+${
+    flavor ? `The manager is known for: ${flavor}.
+` : ''
+  }Write a short, clever roast (2–3 sentences). Be light-hearted but pointed. No need to mention specific player stats or projections — just go with vibes and roster decisions.`;
 
   try {
     const res = await axios.post(
       GROQ_API_URL,
       {
-        model: "llama-3.3-70b-versatile",
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.8,
+        model: 'llama3-8b-8192',
+        messages: [{ role: 'user', content: prompt }],
+        temperature: 0.9,
       },
       {
         headers: {
           Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       }
     );
 
-    const message = await res.data.choices[0].message.content.trim();
-    return `🏆 John Wineman Award: Week ${week} 🏆\n\n${message}`;
-  } catch (error) {
-    console.error("💥 API Error:", error.response.status, error.response.data);
-    return "Could not generate a roast this time.";
+    return res.data.choices[0].message.content.trim();
+  } catch (err) {
+    console.error('❌ Error generating generic roast:', err.message);
+    return 'Roast unavailable. Probably too savage to say out loud.';
   }
 }

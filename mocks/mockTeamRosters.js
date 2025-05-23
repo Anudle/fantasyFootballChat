@@ -4,6 +4,7 @@ export async function teamRosters() {
   return [
     {
       teamName: "Leapfrog Clause",
+      firstName: "Matt",
       funFacts: [
         "friends created the code word leapfrog to let him win at video games in middle school if he got too angry",
         "unsuccesfully tried a backflip at a school dance",
@@ -24,14 +25,26 @@ export async function teamRosters() {
           selected_position: [null, { position: "RB" }],
         },
       ],
+      roster: [
+        "Baker Mayfield",
+        "Deebo Samuel",
+        "Adam Thielen",
+        "Bijan Robinson",
+        "Isaac Guerendo",
+        "Chig Okonkwo",
+        "Davante Adams",
+        "Ameer Abdullah",
+        "Kendre Miller",
+        "Rome Odunze",
+        "Brandin Cooks",
+        "Chris Boswell",
+        "Indianapolis",
+      ],
     },
     {
+      firstName: "David",
       teamName: "This One's for John",
-      funFacts: [
-        "Like Astronomy",
-        "Lives in Hawaii",
-        "Hot mom",
-      ],
+      funFacts: ["Like Astronomy", "Lives in Hawaii", "Hot mom"],
       players: [
         {
           name: { full: "Calvin Ridley" },
@@ -42,6 +55,7 @@ export async function teamRosters() {
       ],
     },
     {
+      firstName: "Jason",
       teamName: "Super Mega Awesome ✨",
       funFacts: [
         "runs marathons",
@@ -59,8 +73,13 @@ export async function teamRosters() {
       ],
     },
     {
+      firstName: "Phi",
       teamName: "Garipp Bowls",
-      funFacts: ["Hot mom"],
+      funFacts: [
+        "Hot mom",
+        "commishiner",
+        "was in a screamo band Sound of Speed",
+      ],
       players: [],
     },
     {
@@ -105,7 +124,7 @@ export async function teamRosters() {
     },
     {
       teamName: "Tebow’s Purity Ring",
-      funFacts: ["Hot mom"],
+      funFacts: ["Hot mom", "drafted a Jason Elem (a kicker) in the 1st round"],
       players: [],
     },
   ];

@@ -1,10 +1,11 @@
 // runTuesdayRoast.mjs
 import { detectLineupOffenders } from "../utils/detectLineupOffenders.js";
-import { generateRoast } from "../utils/generateRoast.js";
+import { generateTuesdayRoast } from "../utils/generateTuesdayRoast.js";
 import { teamRosters } from "../mocks/mockTeamRosters.js";
 import { getCurrentFantasyWeek } from "../utils/getCurrentFantasyWeek.js";
 
-const currentWeek = getCurrentFantasyWeek;
+// const currentWeek = getCurrentFantasyWeek;
+const currentWeek = 6; // Simulated week
 
 let worstTeam = null;
 let worstOffenders = [];
@@ -19,7 +20,7 @@ for (const team of teamRostersArray) {
 }
 
 if (worstTeam) {
-  const roast = await generateRoast(
+  const roast = await generateTuesdayRoast(
     worstTeam.teamName,
     worstOffenders,
     worstTeam.funFacts,

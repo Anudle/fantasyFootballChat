@@ -1,0 +1,203 @@
+[
+  {
+    "firstName": "Matt",
+    "teamName": "Leapfrog Clause",
+    "teamKey": "449.l.438606.t.8",
+    "funFacts": [
+      "friends created the code word leapfrog to let him win at video games in middle school if he got too angry",
+      "unsuccesfully tried a backflip at a school dance",
+      "loves Paramore band",
+      "Hot mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "David",
+    "teamName": "This One's for John",
+    "teamKey": "449.l.438606.t.9",
+    "funFacts": [
+      "Like Astronomy",
+      "Lives in Hawaii",
+      "Hot mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "Jason",
+    "teamName": "Super Mega Awesome ✨",
+    "teamKey": "449.l.438606.t.10",
+    "funFacts": [
+      "runs marathons",
+      "won best smile in high school",
+      "worked at fb",
+      "Hot mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "Phi",
+    "teamName": "Garipp Bowls",
+    "teamKey": "449.l.438606.t.1",
+    "funFacts": [
+      "Hot mom",
+      "commishiner",
+      "was in a screamo band Sound of Speed"
+    ],
+    "roster": [
+      "Jameis Winston",
+      "Amon-Ra St. Brown",
+      "Ja'Marr Chase",
+      "Rico Dowdle",
+      "Rhamondre Stevenson",
+      "Mike Gesicki",
+      "Nick Westbrook-Ikhine",
+      "Tyrone Tracy Jr.",
+      "Brock Purdy",
+      "Darnell Mooney",
+      "Kimani Vidal",
+      "Aaron Rodgers",
+      "Jake Bates",
+      "Washington",
+      "Detroit"
+    ]
+  },
+  {
+    "firstName": "Dan",
+    "teamName": "Calvins Cutthroats",
+    "teamKey": "449.l.438606.t.2",
+    "funFacts": [
+      "Hot mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "Bales",
+    "teamName": "Cow Bellz",
+    "teamKey": "449.l.438606.t.3",
+    "funFacts": [
+      "Hot mom"
+    ],
+    "roster": [
+      "Kirk Cousins",
+      "George Pickens",
+      "Malik Nabers",
+      "Nick Chubb",
+      "Aaron Jones Sr.",
+      "Kyle Pitts",
+      "Xavier Legette",
+      "Jonathan Taylor",
+      "Pat Freiermuth",
+      "Anthony Richardson Sr.",
+      "Romeo Doubs",
+      "Braelon Allen",
+      "Jake Elliott",
+      "New Orleans",
+      "Los Angeles"
+    ]
+  },
+  {
+    "firstName": "Barry",
+    "teamName": "The Baker Mayfields",
+    "teamKey": "449.l.438606.t.4",
+    "funFacts": [
+      "Hot mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "Anu",
+    "teamName": "Anubis",
+    "teamKey": "449.l.438606.t.5",
+    "funFacts": [
+      "Hot mom"
+    ],
+    "roster": [
+      "Josh Allen",
+      "Calvin Ridley",
+      "CeeDee Lamb",
+      "Kareem Hunt",
+      "Rachaad White",
+      "Travis Kelce",
+      "Tank Bigsby",
+      "Rashod Bateman",
+      "Cedric Tillman",
+      "Josh Downs",
+      "Russell Wilson",
+      "Raheem Mostert",
+      "Alec Pierce",
+      "Cameron Dicker",
+      "Tennessee"
+    ]
+  },
+  {
+    "firstName": "Kyle",
+    "teamName": "GlennAgain",
+    "teamKey": "449.l.438606.t.6",
+    "funFacts": [
+      "Hot mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "Lucas",
+    "teamName": "LUCAS'S LUCKY LIONS",
+    "teamKey": "449.l.438606.t.7",
+    "funFacts": [
+      "Hot mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "Phi's Uncle",
+    "teamName": "TN Gamblers",
+    "teamKey": "449.l.438606.t.11",
+    "funFacts": [
+      "Hot mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "Kevin",
+    "teamName": "BowleyCowley",
+    "teamKey": "449.l.438606.t.12",
+    "funFacts": [
+      "saintly mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "Michael",
+    "teamName": "O-moss-em",
+    "teamKey": "449.l.438606.t.13",
+    "funFacts": [
+      "Hot mom"
+    ],
+    "roster": []
+  },
+  {
+    "firstName": "Ankit",
+    "teamName": "Tebow’s Purity Ring",
+    "teamKey": "449.l.438606.t.14",
+    "funFacts": [
+      "Hot mom",
+      "drafted a Jason Elem (a kicker) in the 1st round"
+    ],
+    "roster": [
+      "Matthew Stafford",
+      "Justin Jefferson",
+      "DJ Moore",
+      "Jahmyr Gibbs",
+      "Bucky Irving",
+      "T.J. Hockenson",
+      "Keon Coleman",
+      "Javonte Williams",
+      "Dalton Kincaid",
+      "Michael Pittman Jr.",
+      "Caleb Williams",
+      "Rashid Shaheed",
+      "Jason Sanders",
+      "Chicago",
+      "Baltimore"
+    ]
+  }
+]

@@ -4,7 +4,7 @@ import "dotenv/config";
 
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
-export async function generateGroqPrediction({
+export async function generateThursdayWarning({
   teamName,
   funFacts,
   offenders,

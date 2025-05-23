@@ -2,7 +2,7 @@
 // runThursdayPrediction.mjs
 import { getAccessToken } from '../yahoo/getAccessToken.js';
 import { teamRosters } from '../mocks/mockTeamRosters.js';
-import { generateGroqPrediction } from '../utils/generateGroqPrediction.js';
+import { generateThursdayWarning } from '../utils/generateThursdayWarning.js';
 import { detectLineupOffenders } from '../utils/detectLineupOffenders.js';
 import { mockMatchups } from '../mocks/mockMatchups.js';
 import axios from 'axios';
@@ -16,7 +16,7 @@ for (const team of teams) {
   const offenders = detectLineupOffenders(team.players, WEEK);
 
   if (offenders.length > 0) {
-    const message = await generateGroqPrediction({
+    const message = await generateThursdayWarning({
       teamName: team.teamName,
       funFacts: team.funFacts,
       offenders,
