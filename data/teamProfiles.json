@@ -15,11 +15,7 @@
     "firstName": "David",
     "teamName": "This One's for John",
     "teamKey": "449.l.438606.t.9",
-    "funFacts": [
-      "Like Astronomy",
-      "Lives in Hawaii",
-      "Hot mom"
-    ],
+    "funFacts": ["Like Astronomy", "Lives in Hawaii", "Hot mom"],
     "roster": []
   },
   {
@@ -40,8 +36,8 @@
     "teamKey": "449.l.438606.t.1",
     "funFacts": [
       "Hot mom",
-      "commishiner",
-      "was in a screamo band Sound of Speed"
+      "Commishiner",
+      "Was guitarist in a emo band Sound of Speed"
     ],
     "roster": [
       "Jameis Winston",
@@ -66,7 +62,9 @@
     "teamName": "Calvins Cutthroats",
     "teamKey": "449.l.438606.t.2",
     "funFacts": [
-      "Hot mom"
+      "Hot mom",
+      "Good at skateboarding and snowboarding",
+      "Gives driving tours at Estes Park"
     ],
     "roster": []
   },
@@ -74,9 +72,7 @@
     "firstName": "Bales",
     "teamName": "Cow Bellz",
     "teamKey": "449.l.438606.t.3",
-    "funFacts": [
-      "Hot mom"
-    ],
+    "funFacts": ["Hot mom", "Lives in Hollywood", "Memory of a goldfish"],
     "roster": [
       "Kirk Cousins",
       "George Pickens",
@@ -100,7 +96,10 @@
     "teamName": "The Baker Mayfields",
     "teamKey": "449.l.438606.t.4",
     "funFacts": [
-      "Hot mom"
+      "Hot mom",
+      "Hipster in Brooklyn",
+      "Loves Andrew Yang",
+      "Big Sooner fan"
     ],
     "roster": []
   },
@@ -108,9 +107,7 @@
     "firstName": "Anu",
     "teamName": "Anubis",
     "teamKey": "449.l.438606.t.5",
-    "funFacts": [
-      "Hot mom"
-    ],
+    "funFacts": ["Coded this app", "Hard to make fun of", "Too perfect"],
     "roster": [
       "Josh Allen",
       "Calvin Ridley",
@@ -130,12 +127,10 @@
     ]
   },
   {
-    "firstName": "Kyle",
+    "firstName": "K flo",
     "teamName": "GlennAgain",
     "teamKey": "449.l.438606.t.6",
-    "funFacts": [
-      "Hot mom"
-    ],
+    "funFacts": ["Hot mom", "Too tall", "Engineer"],
     "roster": []
   },
   {
@@ -143,7 +138,9 @@
     "teamName": "LUCAS'S LUCKY LIONS",
     "teamKey": "449.l.438606.t.7",
     "funFacts": [
-      "Hot mom"
+      "Hot mom",
+      "Was head boy in high school but got forced out",
+      "Has a quesidlla review account on twitter"
     ],
     "roster": []
   },
@@ -152,7 +149,9 @@
     "teamName": "TN Gamblers",
     "teamKey": "449.l.438606.t.11",
     "funFacts": [
-      "Hot mom"
+      "Hot mom",
+      "No one knows anything about him",
+      "We don't enven know his first name"
     ],
     "roster": []
   },
@@ -160,9 +159,7 @@
     "firstName": "Kevin",
     "teamName": "BowleyCowley",
     "teamKey": "449.l.438606.t.12",
-    "funFacts": [
-      "saintly mom"
-    ],
+    "funFacts": ["saintly mom", "Lives in Kansas City"],
     "roster": []
   },
   {
@@ -170,7 +167,10 @@
     "teamName": "O-moss-em",
     "teamKey": "449.l.438606.t.13",
     "funFacts": [
-      "Hot mom"
+      "Hot mom",
+      "Lives in Arkansas",
+      "Play Lacrosse",
+      "Has big body parts"
     ],
     "roster": []
   },
@@ -180,7 +180,9 @@
     "teamKey": "449.l.438606.t.14",
     "funFacts": [
       "Hot mom",
-      "drafted a Jason Elem (a kicker) in the 1st round"
+      "drafted a Jason Elem (a kicker) in the 1st round",
+      "Lives in Michigan",
+      "Is too handsome"
     ],
     "roster": [
       "Matthew Stafford",
