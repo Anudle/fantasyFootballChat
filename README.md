@@ -1,4 +1,4 @@
-# 🏈 Fantasy Football Roast Bot
+# 🏈 MUFF Bot
 
 This project is a Telegram-integrated fantasy football bot that:
 - Authenticates with the Yahoo Fantasy Sports API
