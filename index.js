@@ -3,6 +3,7 @@ import express from "express";
 import { AuthorizationCode } from "simple-oauth2";
 import fs from "fs";
 import "dotenv/config";
+import './telegram/telegramListener.js';    
 import open from "open"; // ✅ the correct ESM import
 
 const config = {
@@ -17,9 +18,11 @@ const config = {
   },
 };
 
+
 const client = new AuthorizationCode(config);
 const app = express();
 const redirectUri = "https://fantasyfootballchat.onrender.com/callback";
+const PORT = process.env.PORT || 3000;
 
 const authorizationUri = client.authorizeURL({
   redirect_uri: redirectUri,
@@ -65,6 +68,6 @@ app.get("/callback", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Listening on http://localhost:3000/auth");
+app.listen(PORT, () => {
+  console.log(`Listening on ${PORT}`);
 });

@@ -22,11 +22,7 @@ async function getLeagueData() {
     });
 
     const json = await res.json();
-    // fs.writeFileSync(
-    //   `${__dirname}/leagueData.json`,
-    //   JSON.stringify(json, null, 2),
-    //   'utf-8'
-    // );
+
     console.log({ json });
     // console.log('✅ League Data written to leagueData.json');
   } catch (err) {

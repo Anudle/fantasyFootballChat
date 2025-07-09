@@ -15,7 +15,11 @@
     "firstName": "David",
     "teamName": "This One's for John",
     "teamKey": "449.l.438606.t.9",
-    "funFacts": ["Like Astronomy", "Lives in Hawaii", "Hot mom"],
+    "funFacts": [
+      "Like Astronomy",
+      "Lives in Hawaii",
+      "Hot mom"
+    ],
     "roster": []
   },
   {
@@ -28,7 +32,23 @@
       "worked at fb",
       "Hot mom"
     ],
-    "roster": []
+    "roster": [
+      "Lamar Jackson",
+      "Tank Dell",
+      "Dontayvion Wicks",
+      "Tony Pollard",
+      "Roschon Johnson",
+      "Mark Andrews",
+      "Isiah Pacheco",
+      "Brock Bowers",
+      "Andrei Iosivas",
+      "Michael Wilson",
+      "Chris Olave",
+      "Travis Etienne Jr.",
+      "Brandon McManus",
+      "Miami",
+      "Las Vegas"
+    ]
   },
   {
     "firstName": "Phi",
@@ -36,7 +56,7 @@
     "teamKey": "449.l.438606.t.1",
     "funFacts": [
       "Hot mom",
-      "Commishiner",
+      "Commishiner for this fantasy football league",
       "Was guitarist in a emo band Sound of Speed"
     ],
     "roster": [
@@ -63,7 +83,8 @@
     "teamKey": "449.l.438606.t.2",
     "funFacts": [
       "Hot mom",
-      "Good at skateboarding and snowboarding",
+      "Good at skateboarding",
+      "good at snowboarding",
       "Gives driving tours at Estes Park"
     ],
     "roster": []
@@ -72,7 +93,12 @@
     "firstName": "Bales",
     "teamName": "Cow Bellz",
     "teamKey": "449.l.438606.t.3",
-    "funFacts": ["Hot mom", "Lives in Hollywood", "Memory of a goldfish"],
+    "funFacts": [
+      "Hot mom",
+      "Lives in Hollywood",
+      "Memory of a goldfish",
+      "is an aspiring actor"
+    ],
     "roster": [
       "Kirk Cousins",
       "George Pickens",
@@ -99,15 +125,35 @@
       "Hot mom",
       "Hipster in Brooklyn",
       "Loves Andrew Yang",
-      "Big Sooner fan"
+      "Big OK Sooner fan"
     ],
-    "roster": []
+    "roster": [
+      "Sam Darnold",
+      "A.J. Brown",
+      "Cooper Kupp",
+      "De'Von Achane",
+      "J.K. Dobbins",
+      "Hunter Henry",
+      "Tee Higgins",
+      "Jordan Love",
+      "Ladd McConkey",
+      "Alexander Mattison",
+      "Kenneth Walker III",
+      "Jaylen Warren",
+      "Keenan Allen",
+      "Harrison Butker",
+      "Seattle"
+    ]
   },
   {
     "firstName": "Anu",
     "teamName": "Anubis",
     "teamKey": "449.l.438606.t.5",
-    "funFacts": ["Coded this app", "Hard to make fun of", "Too perfect"],
+    "funFacts": [
+      "Coded this app",
+      "Hard to make fun of",
+      "Too perfect"
+    ],
     "roster": [
       "Josh Allen",
       "Calvin Ridley",
@@ -127,11 +173,32 @@
     ]
   },
   {
-    "firstName": "K flo",
+    "firstName": "Flo",
     "teamName": "GlennAgain",
     "teamKey": "449.l.438606.t.6",
-    "funFacts": ["Hot mom", "Too tall", "Engineer"],
-    "roster": []
+    "funFacts": [
+      "Hot mom",
+      "Too tall",
+      "Goes to raves",
+      "Lives in upstate NY"
+    ],
+    "roster": [
+      "Joe Burrow",
+      "Garrett Wilson",
+      "Jaxon Smith-Njigba",
+      "James Cook",
+      "Zach Charbonnet",
+      "Jonnu Smith",
+      "Puka Nacua",
+      "Jaylen Waddle",
+      "George Kittle",
+      "Jakobi Meyers",
+      "Jeremy McNichols",
+      "Ka'imi Fairbairn",
+      "Blake Grupe",
+      "Kansas City",
+      "San Francisco"
+    ]
   },
   {
     "firstName": "Lucas",
@@ -139,27 +206,64 @@
     "teamKey": "449.l.438606.t.7",
     "funFacts": [
       "Hot mom",
-      "Was head boy in high school but got forced out",
-      "Has a quesidlla review account on twitter"
+      "Was head boy in high school but was forced out by the administration",
+      "Has a quesidilla review account on twitter"
     ],
-    "roster": []
+    "roster": [
+      "Jayden Daniels",
+      "Marvin Harrison Jr.",
+      "Khalil Shakir",
+      "Kyren Williams",
+      "Chuba Hubbard",
+      "Trey McBride",
+      "Derrick Henry",
+      "DeVonta Smith",
+      "Christian Watson",
+      "Tua Tagovailoa",
+      "Will Dissly",
+      "Isaiah Likely",
+      "Tyler Bass",
+      "Buffalo",
+      "Cincinnati"
+    ]
   },
   {
-    "firstName": "Phi's Uncle",
+    "firstName": "TN",
     "teamName": "TN Gamblers",
     "teamKey": "449.l.438606.t.11",
     "funFacts": [
       "Hot mom",
-      "No one knows anything about him",
-      "We don't enven know his first name"
+      "Phi's Uncle",
+      "No one knows his real name",
+      "A mystery"
     ],
-    "roster": []
+    "roster": [
+      "Jared Goff",
+      "Mike Evans",
+      "Drake London",
+      "Josh Jacobs",
+      "Devin Singletary",
+      "Noah Gray",
+      "Tyreek Hill",
+      "Amari Cooper",
+      "Blake Corum",
+      "Tyler Lockett",
+      "Evan Engram",
+      "Geno Smith",
+      "Antonio Gibson",
+      "Brandon Aubrey",
+      "Philadelphia"
+    ]
   },
   {
     "firstName": "Kevin",
     "teamName": "BowleyCowley",
     "teamKey": "449.l.438606.t.12",
-    "funFacts": ["saintly mom", "Lives in Kansas City"],
+    "funFacts": [
+      "saintly mom",
+      "Lives in Kansas City",
+      "Was a high school guard"
+    ],
     "roster": []
   },
   {
@@ -169,10 +273,26 @@
     "funFacts": [
       "Hot mom",
       "Lives in Arkansas",
-      "Play Lacrosse",
+      "Played Lacrosse",
       "Has big body parts"
     ],
-    "roster": []
+    "roster": [
+      "Patrick Mahomes",
+      "DeAndre Hopkins",
+      "Jalen McMillan",
+      "Najee Harris",
+      "Tyler Allgeier",
+      "Dalton Schultz",
+      "Jayden Reed",
+      "Alvin Kamara",
+      "Marquez Valdes-Scantling",
+      "David Njoku",
+      "Demarcus Robinson",
+      "Justin Herbert",
+      "Bo Nix",
+      "Justin Tucker",
+      "Houston"
+    ]
   },
   {
     "firstName": "Ankit",
@@ -182,7 +302,8 @@
       "Hot mom",
       "drafted a Jason Elem (a kicker) in the 1st round",
       "Lives in Michigan",
-      "Is too handsome"
+      "Too handsome",
+      "Could be a Bollywood actor or model"
     ],
     "roster": [
       "Matthew Stafford",
