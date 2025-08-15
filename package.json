@@ -20,6 +20,7 @@
     "node-telegram-bot-api": "^0.61.0",
     "open": "^10.1.2",
     "openai": "^4.100.0",
+    "pg": "^8.16.3",
     "simple-oauth2": "^5.1.0"
   },
   "devDependencies": {

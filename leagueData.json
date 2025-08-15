@@ -17,8 +17,9 @@
         "scoring_type": "head",
         "league_type": "private",
         "renew": "423_658004",
-        "renewed": "",
+        "renewed": "461_920161",
         "felo_tier": "silver",
+        "matchup_week": 17,
         "iris_group_chat_id": "",
         "allow_add_to_dl_extra_pos": 0,
         "is_pro_league": "0",
@@ -61,6 +62,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 2
+                },
                 [],
                 [],
                 [],
@@ -90,6 +94,9 @@
                   "draft_grade": "D",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/1/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -136,6 +143,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 9
+                },
                 [],
                 [],
                 [],
@@ -167,6 +177,9 @@
                   "draft_grade": "D",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/2/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -212,6 +225,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 4
+                },
                 [],
                 [],
                 [],
@@ -241,6 +257,9 @@
                   "draft_grade": "B-",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/3/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -286,6 +305,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 11
+                },
                 [],
                 [],
                 [],
@@ -317,6 +339,9 @@
                   "draft_grade": "D",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/4/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -364,6 +389,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 5
+                },
                 [],
                 [],
                 [],
@@ -393,6 +421,9 @@
                   "draft_grade": "A+",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/5/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -439,6 +470,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 12
+                },
                 [],
                 [],
                 [],
@@ -470,6 +504,9 @@
                   "draft_grade": "C",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/6/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -515,6 +552,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 3
+                },
                 [],
                 [],
                 [],
@@ -546,6 +586,9 @@
                   "draft_grade": "D",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/7/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -591,6 +634,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 10
+                },
                 [],
                 [],
                 [],
@@ -622,6 +668,9 @@
                   "draft_grade": "B-",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/8/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -667,6 +716,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 1
+                },
                 [],
                 [],
                 [],
@@ -696,6 +748,9 @@
                   "draft_grade": "A+",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/9/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -741,6 +796,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 8
+                },
                 [],
                 [],
                 [],
@@ -770,6 +828,9 @@
                   "draft_grade": "A",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/10/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -815,6 +876,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 7
+                },
                 [],
                 [],
                 [],
@@ -846,6 +910,9 @@
                   "draft_grade": "B",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/11/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -891,6 +958,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 6
+                },
                 [],
                 [],
                 [],
@@ -922,6 +992,9 @@
                   "draft_grade": "D-",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/12/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -967,6 +1040,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 13
+                },
                 [],
                 [],
                 [],
@@ -998,6 +1074,9 @@
                   "draft_grade": "A-",
                   "draft_recap_url": "https://football.fantasysports.yahoo.com/2024/f1/438606/13/draftrecap"
                 },
+                [],
+                [],
+                [],
                 [],
                 [],
                 {
@@ -1043,6 +1122,9 @@
                     }
                   ]
                 },
+                {
+                  "previous_season_team_rank": 14
+                },
                 [],
                 [],
                 [],
@@ -1074,6 +1156,9 @@
                 },
                 [],
                 [],
+                [],
+                [],
+                [],
                 {
                   "managers": [
                     {
@@ -1095,7 +1180,7 @@
         }
       }
     ],
-    "time": "54.661989212036ms",
+    "time": "157.94205665588ms",
     "copyright": "Certain Data by Sportradar, Stats Perform and Rotowire",
     "refresh_rate": "60"
   }

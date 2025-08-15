@@ -30,8 +30,8 @@ bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
   const text = msg.text.toLowerCase();
 
-  if (text.startsWith("yo bot roast ")) {
-    const firstName = text.replace("yo bot roast ", "").trim().toLowerCase();
+  if (text.startsWith("hey bot roast ")) {
+    const firstName = text.replace("hey bot roast ", "").trim().toLowerCase();
     const mapEntry = nameToTeamMap[firstName];
 
     if (!mapEntry) {

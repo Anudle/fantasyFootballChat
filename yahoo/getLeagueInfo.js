@@ -1,19 +1,13 @@
 import fs from "fs";
 import fetch from "node-fetch";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-import { refreshYahooToken } from "../refreshToken.js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const accessToken = await refreshYahooToken(); // 🔄 Always use fresh token
+import { refreshYahooToken } from "./refreshToken.js";
 
 const leagueKey = "449.l.438606";
 const url = `https://fantasysports.yahooapis.com/fantasy/v2/league/${leagueKey}/teams?format=json`;
 
 async function getLeagueData() {
   try {
+    const accessToken = await refreshYahooToken(); // always fresh
     const res = await fetch(url, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -21,10 +15,17 @@ async function getLeagueData() {
       },
     });
 
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`HTTP ${res.status} – ${text}`);
+    }
+
     const json = await res.json();
 
-    console.log({ json });
-    // console.log('✅ League Data written to leagueData.json');
+    // Save JSON to file in project directory
+    fs.writeFileSync("./leagueData.json", JSON.stringify(json, null, 2));
+
+    console.log("✅ League data saved to leagueData.json");
   } catch (err) {
     console.error("❌ Error fetching league data:", err.message);
   }

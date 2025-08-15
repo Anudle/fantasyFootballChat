@@ -4,7 +4,7 @@ import { AuthorizationCode } from "simple-oauth2";
 import fs from "fs";
 import "dotenv/config";
 import './telegram/telegramListener.js';    
-import open from "open"; // ✅ the correct ESM import
+
 
 const config = {
   client: {
