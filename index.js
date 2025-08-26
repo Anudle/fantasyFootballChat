@@ -24,6 +24,20 @@ const app = express();
 const redirectUri = "https://fantasyfootballchat.onrender.com/callback";
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json());
+
+// Health check to keep service healthy on Render
+app.get("/healthz", (_, res) => res.status(200).send("ok"));
+
+// 🔒 Webhook endpoint (use a secret path so randos can't hit it)
+app.post(`/telegram/${process.env.TG_WEBHOOK_SECRET}`, (req, res) => {
+  // respond FAST so Telegram won’t retry
+  res.sendStatus(200);
+  // hand the update to node-telegram-bot-api
+  bot.processUpdate(req.body);
+});
+
+
 const authorizationUri = client.authorizeURL({
   redirect_uri: redirectUri,
   scope: "fspt-r",

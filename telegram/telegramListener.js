@@ -4,8 +4,18 @@ import "dotenv/config";
 import { generateRoast } from "../utils/generateRoast.js";
 import { getTeamRoster } from "../yahoo/getTeamRoster.js";
 import fs from "fs";
+import path from "path";
 
-const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: true });
+const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
+
+// Set webhook URL at process start (safe to call repeatedly)
+const baseUrl = process.env.PUBLIC_BASE_URL; // e.g. https://fantasyfootballchat.onrender.com
+const secret = process.env.TG_WEBHOOK_SECRET;
+
+await bot.setWebHook(`${baseUrl}/telegram/${secret}`, {
+  secret_token: secret, // Telegram will send this header
+});
+
 
 // Load teamProfiles once
 const teamProfiles = JSON.parse(
