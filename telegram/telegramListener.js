@@ -5,6 +5,14 @@ import { generateRoast } from "../utils/generateRoast.js";
 import { getTeamRoster } from "../yahoo/getTeamRoster.js";
 import fs from "fs";
 
+if (process.env.ENABLE_POLLING !== "1") {
+  console.log("Polling disabled (ENABLE_POLLING != '1').");
+  process.exit(0);
+}
+
+const tail = (s) => (s ? s.slice(-6) : "missing");
+console.log("TOKEN tail:", tail(process.env.TELEGRAM_BOT_TOKEN));
+
 console.log(
   "BOOT: running telegramListener.js in POLLING mode @",
   new Date().toISOString()
@@ -18,6 +26,8 @@ console.log("BOOT: webhook deleted");
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
   polling: { interval: 3000, params: { timeout: 50 } },
 });
+
+bot.getMe().then((me) => console.log("Connected as @" + me.username));
 
 console.log("🤖 Telegram worker started: polling…");
 // Load teamProfiles once
