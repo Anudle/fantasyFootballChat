@@ -4,19 +4,22 @@ import "dotenv/config";
 import { generateRoast } from "../utils/generateRoast.js";
 import { getTeamRoster } from "../yahoo/getTeamRoster.js";
 import fs from "fs";
-import path from "path";
 
-const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
+console.log(
+  "BOOT: running telegramListener.js in POLLING mode @",
+  new Date().toISOString()
+);
+import axios from "axios";
+const token = process.env.TELEGRAM_BOT_TOKEN;
+await axios.post(`https://api.telegram.org/bot${token}/deleteWebhook`);
+console.log("BOOT: webhook deleted");
 
-// Set webhook URL at process start (safe to call repeatedly)
-const baseUrl = process.env.PUBLIC_BASE_URL; // e.g. https://fantasyfootballchat.onrender.com
-const secret = process.env.TG_WEBHOOK_SECRET;
-
-await bot.setWebHook(`${baseUrl}/telegram/${secret}`, {
-  secret_token: secret, // Telegram will send this header
+// ✅ POLLING ONLY
+const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
+  polling: { interval: 3000, params: { timeout: 50 } },
 });
 
-
+console.log("🤖 Telegram worker started: polling…");
 // Load teamProfiles once
 const teamProfiles = JSON.parse(
   fs.readFileSync("./data/teamProfiles.json", "utf-8")
