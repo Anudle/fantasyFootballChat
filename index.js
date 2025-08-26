@@ -3,7 +3,7 @@ import express from "express";
 import { AuthorizationCode } from "simple-oauth2";
 import fs from "fs";
 import "dotenv/config";
-import './telegram/telegramListener.js';    
+// import './telegram/telegramListener.js';    
 
 
 const config = {
