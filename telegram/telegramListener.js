@@ -5,10 +5,10 @@ import { generateRoast } from "../utils/generateRoast.js";
 import { getTeamRoster } from "../yahoo/getTeamRoster.js";
 import fs from "fs";
 
-if (process.env.ENABLE_POLLING !== '1') {
-  console.log("Polling disabled (ENABLE_POLLING != '1')."); process.exit(0);
+if (process.env.ENABLE_POLLING !== "1") {
+  console.log("Polling disabled (ENABLE_POLLING != '1').");
+  process.exit(0);
 }
-
 
 const tail = (s) => (s ? s.slice(-6) : "missing");
 console.log("TOKEN tail:", tail(process.env.TELEGRAM_BOT_TOKEN));
