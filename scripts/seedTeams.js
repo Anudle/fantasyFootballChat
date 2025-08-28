@@ -10,7 +10,8 @@ const teams = [
     city: "Bay Area",
     flavors: [
       "Commissioner of this fantasy football league",
-      "Was guitarist in an emo band called Sound of Speed",
+      "Was guitarist in an emo band Sound of Speed",
+      "Good at Halo",
       "hot mom",
     ],
   },
@@ -34,7 +35,7 @@ const teams = [
     manager: "Bales",
     city: "Los Angeles, CA",
     flavors: [
-      "Lives in Hollywood",
+      "Knows Hollywood people",
       "Memory of a goldfish",
       "Aspiring actor",
       "hot mom",
@@ -49,6 +50,7 @@ const teams = [
     flavors: [
       "Works at Thumbtack (home services)",
       "Big OU Sooner fan",
+      "runs a lot",
       "hot mom",
     ],
   },
@@ -90,6 +92,7 @@ const teams = [
       "Friends used the code word 'leapfrog' so he'd win video games if he got too angry",
       "Unsuccessfully tried a backflip at a school dance",
       "Paramore/Foo Fighters superfan",
+      "good at guitar",
       "hot mom",
     ],
   },
@@ -101,8 +104,8 @@ const teams = [
     city: "Maui, HI",
     flavors: [
       "Loves astronomy",
-      "Stargazes on Maui",
-      "Knows his constellations better than his bench depth",
+      "good at world of warcaft",
+      "Software engineer",
       "hot mom",
     ],
   },
