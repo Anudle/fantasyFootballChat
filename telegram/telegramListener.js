@@ -2,79 +2,79 @@
 import TelegramBot from "node-telegram-bot-api";
 import "dotenv/config";
 import { generateRoast } from "../utils/generateRoast.js";
-import { getTeamRoster } from "../yahoo/getTeamRoster.js";
-import fs from "fs";
+import { buildRoastContext } from "../services/buildRoastContext.js";
+import { getAllTeams, getTeamByManagerFirstName } from "../repos/teamsRepo.js";
+import { fetchAndSaveRosterForTeam } from "../yahoo/fetchAndSaveRoster.js";
 
-if (process.env.ENABLE_POLLING !== "1") {
-  console.log("Polling disabled (ENABLE_POLLING != '1').");
-  process.exit(0);
-}
-
-const tail = (s) => (s ? s.slice(-6) : "missing");
-console.log("TOKEN tail:", tail(process.env.TELEGRAM_BOT_TOKEN));
-
-console.log(
-  "BOOT: running telegramListener.js in POLLING mode @",
-  new Date().toISOString()
-);
-import axios from "axios";
-const token = process.env.TELEGRAM_BOT_TOKEN;
-await axios.post(`https://api.telegram.org/bot${token}/deleteWebhook`);
-console.log("BOOT: webhook deleted");
-
-// ✅ POLLING ONLY
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
   polling: { interval: 3000, params: { timeout: 50 } },
 });
 
 bot.getMe().then((me) => console.log("Connected as @" + me.username));
-
 console.log("🤖 Telegram worker started: polling…");
-// Load teamProfiles once
-const teamProfiles = JSON.parse(
-  fs.readFileSync("./data/teamProfiles.json", "utf-8")
-);
 
-const nameToTeamMap = {};
-teamProfiles.forEach((profile) => {
-  if (!profile.firstName) return;
-  const key = profile.firstName.toLowerCase();
-  nameToTeamMap[key] = {
-    teamKey: profile.teamKey,
-    teamName: profile.teamName,
-    flavor:
-      profile.funFacts?.[Math.floor(Math.random() * profile.funFacts.length)] ||
-      "",
-    staticRoster: profile.roster || [],
-  };
-});
-
+// --- ROAST: "hey bot roast jason"
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
-  const text = msg.text.toLowerCase();
+  const raw = (msg.text || "").trim();
+  const lower = raw.toLowerCase();
 
-  if (text.startsWith("hey bot roast ")) {
-    const firstName = text.replace("hey bot roast ", "").trim().toLowerCase();
-    const mapEntry = nameToTeamMap[firstName];
-
-    if (!mapEntry) {
-      return bot.sendMessage(
-        chatId,
-        `😬 Couldn't find a team for "${firstName}".`
-      );
-    }
-
-    const players = mapEntry.staticRoster.length
-      ? mapEntry.staticRoster
-      : await getTeamRoster(mapEntry.teamKey);
+  // 1) roast
+  if (lower.startsWith("hey bot roast ")) {
+    console.log("🔔 Roast request:", raw);
+    const first = raw.slice("hey bot roast ".length).trim();
+    const ctx = await buildRoastContext({ managerFirstName: first });
+    if (!ctx)
+      return bot.sendMessage(chatId, `😬 Couldn't find a team for "${first}".`);
 
     const roast = await generateRoast({
-      firstName,
-      teamName: mapEntry.teamName,
-      flavor: mapEntry.flavor,
-      players,
+      firstName: ctx.manager,
+      teamName: ctx.teamName,
+      players: ctx.roster,
+      flavors: ctx.flavors,
+      homeLocation: ctx.homeLocation,
     });
 
-    bot.sendMessage(chatId, `🔥 Roast for ${mapEntry.teamName}:\n\n${roast}`);
+    return bot.sendMessage(chatId, `🔥 Roast for ${ctx.teamName}:\n\n${roast}`);
+  }
+
+  // 2) /refresh all
+  if (lower === "/refresh all") {
+    const teams = await getAllTeams();
+    let ok = 0,
+      fail = 0;
+    for (const t of teams) {
+      try {
+        await fetchAndSaveRosterForTeam(t);
+        ok++;
+      } catch (e) {
+        console.error("refresh all:", t.team_key, e.message);
+        fail++;
+      }
+      await new Promise((r) => setTimeout(r, 300)); // polite
+    }
+    return bot.sendMessage(
+      chatId,
+      `🔁 Refreshed ${ok}/${teams.length} rosters${
+        fail ? `, ${fail} failed` : ""
+      }.`
+    );
+  }
+
+  // 3) /refresh <firstName>
+  if (lower.startsWith("/refresh ")) {
+    const who = raw.slice("/refresh ".length).trim();
+    const team = await getTeamByManagerFirstName(who);
+    if (!team) return bot.sendMessage(chatId, `No team for "${who}"`);
+    try {
+      const names = await fetchAndSaveRosterForTeam(team);
+      return bot.sendMessage(
+        chatId,
+        `🔁 Refreshed ${team.name} — ${names.length} players cached`
+      );
+    } catch (e) {
+      console.error("refresh:", e);
+      return bot.sendMessage(chatId, `⚠️ Refresh failed for ${team.name}`);
+    }
   }
 });

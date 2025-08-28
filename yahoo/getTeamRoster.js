@@ -1,58 +1,47 @@
-// yahoo/getTeamRoster.js
 import fetch from "node-fetch";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 import { refreshYahooToken } from "./refreshToken.js";
+import { getRosterForTeamId, replaceRoster } from "../repos/rostersRepo.js";
+import { touchRosterSync, updateTeamKeys } from "../repos/teamsRepo.js";
+import { resolve2025LeagueAndTeam } from "./resolve2025LeagueAndTeam.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const profilesPath = path.join(__dirname, "../data/teamProfiles.json");
+export async function getRosterCached(team) {
+  // Step 1: resolve 2025 keys
+  const { team_key, league_key } = await resolve2025LeagueAndTeam({
+    leagueNameOrId: team.league_id_or_name,
+  });
 
-export async function getTeamRoster(teamKey) {
-  const accessToken = await refreshYahooToken();
-  const url = `https://fantasysports.yahooapis.com/fantasy/v2/team/${teamKey}/roster?format=json`;
+  // Step 2: persist in DB
+  await updateTeamKeys(team.id, {
+    season: "2025",
+    team_key,
+    league_key,
+  });
 
-  try {
-    const res = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        Accept: "application/json",
-      },
-    });
+  // Step 3: fetch roster from Yahoo
+  const token = await refreshYahooToken();
+  const url = `https://fantasysports.yahooapis.com/fantasy/v2/team/${team_key}/roster?format=json`;
+  const res = await fetch(url, {
+    headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
+  });
+  if (!res.ok) throw new Error(`Yahoo roster fetch failed: ${res.status}`);
 
-    const data = await res.json();
+  const data = await res.json();
+  const players = data?.fantasy_content?.team?.["1"]?.roster?.["0"]?.players || {};
 
-    const players = data.fantasy_content.team[1].roster[0].players || [];
+  const normalized = Object.values(players)
+    .filter((p) => p?.player)
+    .map((node) => {
+      const arr = node.player?.[0] || [];
+      const name = arr.find((x) => x?.name?.full)?.name?.full || null;
+      const key = (arr.find((x) => x?.player_key) || arr[0])?.player_key || null;
+      const elig = arr.find((x) => x?.eligible_positions)?.eligible_positions;
+      const pos = Array.isArray(elig) ? elig?.[0]?.position ?? null : null;
+      return name ? { player_name: name.trim(), player_key: key, position: pos } : null;
+    })
+    .filter(Boolean);
 
-    const playerNames = Object.values(players)
-      .filter((p) => p.player)
-      .map((p) => p.player[0][2].name.full);
+  await replaceRoster(team.id, normalized);
+  await touchRosterSync(team.id);
 
-    // Read and update teamProfiles.json
-    const profiles = JSON.parse(fs.readFileSync(profilesPath, "utf-8"));
-    const updatedProfiles = profiles.map((profile) =>
-      profile.teamKey === teamKey
-        ? { ...profile, roster: playerNames }
-        : profile
-    );
-    fs.writeFileSync(profilesPath, JSON.stringify(updatedProfiles, null, 2));
-    console.log(`✅ Updated roster in teamProfiles.json for ${teamKey}`);
-
-    return playerNames;
-  } catch (err) {
-    console.error("❌ Error fetching roster:", err.message);
-    return [];
-  }
-}
-
-// Run manually via: node yahoo/getTeamRoster.js <teamKey>
-if (process.argv[1].includes("getTeamRoster.js")) {
-  const teamKey = process.argv[2];
-  if (!teamKey) {
-    console.error("❌ Please provide a team key");
-    process.exit(1);
-  }
-  getTeamRoster(teamKey);
+  return normalized.map((p) => p.player_name);
 }

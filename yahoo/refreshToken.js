@@ -31,8 +31,8 @@ export async function refreshYahooToken() {
 
     // 🔒 Log so you can copy-paste into .env or Render
     console.log("\n✅ New tokens (update your .env or Render environment):");
-    console.log(`ACCESS_TOKEN=${newToken.access_token}`);
-    console.log(`REFRESH_TOKEN=${newToken.refresh_token}`);
+    // console.log(`ACCESS_TOKEN=${newToken.access_token}`);
+    // console.log(`REFRESH_TOKEN=${newToken.refresh_token}`);
     console.log(`Expires at: ${expiresAt.toISOString()}`);
 
     return newToken.access_token;
