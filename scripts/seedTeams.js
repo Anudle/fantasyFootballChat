@@ -32,7 +32,7 @@ const teams = [
     team_key: "449.l.438606.t.3",
     name: "Cow Bellz",
     manager: "Bales",
-    city: "Longmont, CO",
+    city: "Los Angeles, CA",
     flavors: [
       "Lives in Hollywood",
       "Memory of a goldfish",
@@ -162,7 +162,6 @@ const teams = [
     flavors: [
       "Hot mom",
       "Drafted Jason Elam (a kicker) in the 1st round",
-      "Lives in Michigan",
       "Too handsome",
       "Could be a Bollywood actor or model",
     ],
