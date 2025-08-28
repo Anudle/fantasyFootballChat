@@ -7,7 +7,8 @@ const flavorsByName = new Map([
     "Garipp Bowls",
     [
       "Commissioner of this fantasy football league",
-      "Was guitarist in an emo band called Sound of Speed",
+      "Was guitarist in an emo band Sound of Speed",
+      "Good at Halo",
       "hot mom",
     ],
   ],
@@ -22,11 +23,21 @@ const flavorsByName = new Map([
   ],
   [
     "Cow Bellz",
-    ["Lives in Hollywood", "Memory of a goldfish", "Aspiring actor", "hot mom"],
+    [
+      "Knows Hollywood people",
+      "Memory of a goldfish",
+      "Aspiring actor",
+      "hot mom",
+    ],
   ],
   [
     "The Baker Mayfields",
-    ["Works at Thumbtack (home services)", "Big OU Sooner fan", "hot mom"],
+    [
+      "Works at Thumbtack (home services)",
+      "Big OU Sooner fan",
+      "runs a lot",
+      "hot mom",
+    ],
   ],
   ["Anubis", ["Coded this app", "Hard to make fun of", "Too perfect"]],
   ["GlennAgain", ["Hot mom", "Too tall", "Goes to raves", "Engineer"]],
@@ -44,6 +55,7 @@ const flavorsByName = new Map([
       "Friends used the code word 'leapfrog' so he'd win video games if he got too angry",
       "Unsuccessfully tried a backflip at a school dance",
       "Paramore/Foo Fighters superfan",
+      "good at guitar",
       "hot mom",
     ],
   ],
@@ -51,8 +63,8 @@ const flavorsByName = new Map([
     "This One's for John",
     [
       "Loves astronomy",
-      "Stargazes on Maui",
-      "Knows his constellations better than his bench depth",
+      "good at world of warcaft",
+      "Software engineer",
       "hot mom",
     ],
   ],
@@ -84,7 +96,6 @@ const flavorsByName = new Map([
     [
       "Hot mom",
       "Drafted Jason Elam (a kicker) in the 1st round",
-      "Lives in Michigan",
       "Too handsome",
       "Could be a Bollywood actor or model",
     ],
