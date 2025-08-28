@@ -11,7 +11,7 @@ const teams = [
     flavors: [
       "Commissioner of this fantasy football league",
       "Was guitarist in an emo band Sound of Speed",
-      "Good at Halo",
+      "Bee keeper/honey maker hobbiest",
       "hot mom",
     ],
   },
@@ -91,7 +91,7 @@ const teams = [
     flavors: [
       "Friends used the code word 'leapfrog' so he'd win video games if he got too angry",
       "Unsuccessfully tried a backflip at a school dance",
-      "Paramore/Foo Fighters superfan",
+      "Paramore superfan",
       "good at guitar",
       "hot mom",
     ],
@@ -145,7 +145,7 @@ const teams = [
       "Saintly mom",
       "Worked for Halliburton",
       "Web developer",
-      "Played guard for his high school football team",
+      "Played guard for our high school football team",
     ],
   },
   {
@@ -154,7 +154,12 @@ const teams = [
     name: "O-moss-em",
     manager: "Michael",
     city: "Arkansas",
-    flavors: ["Hot mom", "Played lacrosse", "Has big body parts"],
+    flavors: [
+      "Hot mom",
+      "Played lacrosse",
+      "good at dancing",
+      "Has big body parts",
+    ],
   },
   {
     league_id: "nfl.12345",
