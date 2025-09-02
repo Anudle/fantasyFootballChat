@@ -5,6 +5,7 @@ import { generateRoast } from "../utils/generateRoast.js";
 import { buildRoastContext } from "../services/buildRoastContext.js";
 import { getAllTeams, getTeamByManagerFirstName } from "../repos/teamsRepo.js";
 import { fetchAndSaveRosterForTeam } from "../yahoo/fetchAndSaveRoster.js";
+import { generateCompliment } from "../utils/generateGenericCompliment.js";
 
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
   polling: { interval: 3000, params: { timeout: 50 } },
@@ -12,7 +13,7 @@ const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
 
 bot.getMe().then((me) => console.log("Connected as @" + me.username));
 console.log("🤖 Telegram worker started: polling…");
-
+console.log("ping");
 // --- ROAST: "hey bot roast jason"
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
@@ -78,3 +79,40 @@ bot.on("message", async (msg) => {
     }
   }
 });
+
+if (
+  lower.startsWith("hey bot compliment ") ||
+  lower.startsWith("hey bot hype ") ||
+  lower.startsWith("hey bot praise ") ||
+  lower.startsWith("hey bot glaze ")
+) {
+  console.log("🔔 Compliment request:", raw);
+
+  let first = raw;
+  if (lower.startsWith("hey bot compliment ")) {
+    first = raw.slice("hey bot compliment ".length).trim();
+  } else if (lower.startsWith("hey bot hype ")) {
+    first = raw.slice("hey bot hype ".length).trim();
+  } else if (lower.startsWith("hey bot praise ")) {
+    first = raw.slice("hey bot praise ".length).trim();
+  } else {
+    first = raw.slice("hey bot glaze ".length).trim();
+  }
+
+  const ctx = await buildRoastContext({ managerFirstName: first });
+  if (!ctx)
+    return bot.sendMessage(chatId, `😬 Couldn't find a team for "${first}".`);
+
+  const compliment = await generateCompliment({
+    firstName: ctx.manager,
+    teamName: ctx.teamName,
+    players: ctx.roster,
+    flavors: ctx.flavors,
+    homeLocation: ctx.homeLocation,
+  });
+
+  return bot.sendMessage(
+    chatId,
+    `🌟 Hype for ${ctx.teamName}:\n\n${compliment}`
+  );
+}
