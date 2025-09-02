@@ -64,7 +64,7 @@ Instructions:
     const res = await axios.post(
       GROQ_API_URL,
       {
-        model: "llama3-8b-8192",
+        model: "llama-3.1-8b-instant",
         messages: [{ role: "user", content: prompt }],
         temperature: 0.85,
         max_tokens: 180, // enough for 2–3 sentences
