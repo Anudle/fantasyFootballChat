@@ -1,4 +1,3 @@
-// utils/generateGenericCompliment.js
 import axios from "axios";
 import "dotenv/config";
 
@@ -18,6 +17,12 @@ function formatRoster(players, limit = 12) {
   const omitted =
     safe.length > limit ? `\n…and ${safe.length - limit} more` : "";
   return lines + omitted;
+}
+
+function samplePlayerNames(players, maxCount = 3) {
+  const safe = Array.isArray(players) ? players.filter(Boolean) : [];
+  const shuffled = [...safe].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, Math.min(maxCount, shuffled.length));
 }
 
 /**
@@ -42,6 +47,7 @@ export async function generateCompliment({
 }) {
   const chosenFlavor = pickRandom(flavors) || flavor || "";
   const rosterList = formatRoster(players, 12);
+  const nameDrops = samplePlayerNames(players, 3).join(", ");
 
   const prompt = `
 You're a fantasy football commentator known for wholesome hype and positive energy.
@@ -53,11 +59,17 @@ ${homeLocation ? `- Home base: ${homeLocation}\n` : ""}${
   }- Roster (sample):
 ${rosterList || "- (no notable players listed)"}
 
-Instructions:
-- 2–3 sentences total. Warm, punchy, and genuine.
+Formatting rules (follow exactly):
+- Start with a one-line TL;DR that summarizes the praise in ~10–18 words. Prefix with "TL;DR:".
+- After the TL;DR, add a blank line, then the full compliment body.
+- Use Markdown, no code fences.
+
+Content rules:
+- 2–3 sentences in the body. Warm, punchy, and genuine.
 - Keep it G-rated and inclusive. No roasting or sarcasm.
-- Compliment the manager's strategy, vibe, or team identity (no stats required).
-- If useful, lightly weave in the fun fact or home base.
+- If roster is provided, naturally work in 1–3 player names from it (${nameDrops || "none available"}).
+  - Do NOT invent players; only use names from the provided roster list.
+- You can lightly weave in the fun fact or home base.
 `;
 
   try {
@@ -67,15 +79,15 @@ Instructions:
         model: "llama-3.1-8b-instant",
         messages: [{ role: "user", content: prompt }],
         temperature: 0.85,
-        max_tokens: 180, // enough for 2–3 sentences
+        max_tokens: 220,
         top_p: 0.95,
       },
       {
         headers: {
           Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
           "Content-Type": "application/json",
-          timeout: 8000,
         },
+        timeout: 8000,
       }
     );
 
@@ -85,6 +97,6 @@ Instructions:
       "❌ Error generating compliment:",
       err?.response?.data || err.message
     );
-    return "Compliment unavailable… but trust me, your squad looks awesome. 🌟";
+    return "TL;DR: Compliment unavailable.\n\nBut honestly, your squad looks awesome. 🌟";
   }
 }

@@ -55,25 +55,44 @@ export async function getAllTeams() {
   );
 }
 
-export async function updateTeamKeys(teamId, { season, team_key, league_key }) {
-  const sets = [];
-  const params = [teamId];
-  let i = 2;
 
-  if (season) {
-    sets.push(`season = $${i++}`);
-    params.push(season);
-  }
-  if (team_key) {
-    sets.push(`team_key = $${i++}`);
-    params.push(team_key);
-  }
-  if (league_key) {
-    sets.push(`league_key = $${i++}`);
-    params.push(league_key);
-  }
+export async function updateTeamKeys(id, { season, team_key, league_key }) {
+  // swap-safe setter to avoid unique violations on team_key (NOT NULL + UNIQUE)
+  // Pattern: if someone else owns team_key, move them to a placeholder, then set ours.
+  const placeholder = `placeholder:${id}:${Date.now()}`;
 
-  if (!sets.length) return;
+  await query("BEGIN");
 
-  await query(`UPDATE teams SET ${sets.join(", ")} WHERE id = $1`, params);
+  try {
+    // Who (if anyone) currently owns this team_key?
+    const { rows } = await query(
+      "SELECT id FROM teams WHERE team_key = $1 FOR UPDATE",
+      [team_key]
+    );
+
+    if (rows.length && rows[0].id !== id) {
+      const otherId = rows[0].id;
+      // Free the key from the other row using a guaranteed-unique placeholder
+      await query(
+        "UPDATE teams SET team_key = $1 WHERE id = $2",
+        [placeholder, otherId]
+      );
+    }
+
+    // Now safely set keys on our target row
+    await query(
+      `UPDATE teams
+         SET season = $2,
+             team_key = $3,
+             league_key = $4
+       WHERE id = $1`,
+      [id, season, team_key, league_key]
+    );
+
+    await query("COMMIT");
+  } catch (e) {
+    await query("ROLLBACK");
+    // rethrow so your backfill logs the failure neatly
+    throw e;
+  }
 }

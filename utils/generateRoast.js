@@ -1,4 +1,3 @@
-// utils/generateGenericRoast.js
 import axios from "axios";
 import "dotenv/config";
 
@@ -18,6 +17,12 @@ function formatRoster(players, limit = 12) {
   const omitted =
     safe.length > limit ? `\n…and ${safe.length - limit} more` : "";
   return lines + omitted;
+}
+
+function samplePlayerNames(players, maxCount = 3) {
+  const safe = Array.isArray(players) ? players.filter(Boolean) : [];
+  const shuffled = [...safe].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, Math.min(maxCount, shuffled.length));
 }
 
 /**
@@ -42,6 +47,7 @@ export async function generateRoast({
   // Prefer a random from `flavors` array; fall back to single `flavor`
   const chosenFlavor = pickRandom(flavors) || flavor || "";
   const rosterList = formatRoster(players, 12);
+  const nameDrops = samplePlayerNames(players, 3).join(", ");
 
   // Build prompt
   const prompt = `
@@ -53,39 +59,19 @@ ${homeLocation ? `- Home base: ${homeLocation}\n` : ""}${
     chosenFlavor ? `- Fun fact: ${chosenFlavor}\n` : ""
   }- Roster (sample):
 ${rosterList || "- (no notable players listed)"}
-Context:
-${homeLocation ? `- Home base: ${homeLocation}\n` : ""}${
-    chosenFlavor ? `- Fun fact: ${chosenFlavor}\n` : ""
-  }
 
-Instructions:
-- 2–3 sentences total. Punchy and clever.
-- Light-hearted, no slurs or hateful content.
-- Roast their vibes, choices, or team identity; you don't need stats.
-- If useful, weave in the fun fact or home base subtly.
+Formatting rules (follow exactly):
+- Start with a one-line TL;DR that summarizes the roast in ~10–18 words. Prefix with "TL;DR:".
+- After the TL;DR, add a blank line, then the full roast body.
+- Use Markdown, no code fences.
+
+Content rules:
+- 2–3 sentences in the body. Punchy and clever.
+- Light-hearted only—no slurs, hate, or personal attacks.
+- If roster is provided, naturally work in 1–3 player names from it (${nameDrops || "none available"}).
+  - Do NOT invent players; only use names from the provided roster list.
+- You can weave in the fun fact or home base subtly if helpful.
 `;
-
-  //   const prompt = `
-  // You're a fantasy football commentator known for sharp wit and dry humor.
-  // Write a playful roast for the manager "${firstName}" and team "${teamName}".
-
-  // Context:
-  // ${homeLocation ? `- Home base: ${homeLocation}\n` : ""}${
-  //     chosenFlavor ? `- Fun fact: ${chosenFlavor}\n` : ""
-  //   }- Roster (sample):
-  // ${rosterList || "- (no notable players listed)"}
-  // Context:
-  // ${homeLocation ? `- Home base: ${homeLocation}\n` : ""}${
-  //     chosenFlavor ? `- Fun fact: ${chosenFlavor}\n` : ""
-  //   }- Roster (sample):
-  // ${rosterList || "- (no notable players listed)"}
-
-  // Instructions:
-  // - 2–3 sentences total. Punchy and clever.
-  // - Light-hearted, no slurs or hateful content.
-  // - Roast their vibes, choices, or team identity; you don't need stats.
-  // - If useful, weave in the fun fact or home base subtly.
-  // `;
 
   try {
     const res = await axios.post(
@@ -94,17 +80,16 @@ Instructions:
         model: "llama-3.1-8b-instant",
         messages: [{ role: "user", content: prompt }],
         temperature: 0.9,
-        max_tokens: 180, // enough for 2–3 zesty sentences
+        max_tokens: 220, // wiggle room for TL;DR + body
         top_p: 0.95,
       },
       {
         headers: {
           Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
           "Content-Type": "application/json",
-          // Optional: set a short timeout so your bot stays snappy
-          // (Axios uses ms; adjust to taste)
-          timeout: 8000,
         },
+        // Keep the bot snappy
+        timeout: 8000,
       }
     );
 
@@ -114,6 +99,6 @@ Instructions:
       "❌ Error generating roast:",
       err?.response?.data || err.message
     );
-    return "Roast unavailable. Probably too savage to say out loud.";
+    return "TL;DR: Roast unavailable.\n\nProbably too savage to say out loud today. Try again soon. 😅";
   }
 }
