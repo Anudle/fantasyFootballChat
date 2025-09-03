@@ -55,31 +55,37 @@ export async function getAllTeams() {
   );
 }
 
+function toRows(result) {
+  // Compatible with either:
+  // - pg.Pool.query => { rows: [...] }
+  // - custom query() that returns rows directly
+  if (Array.isArray(result)) return result;
+  if (Array.isArray(result?.rows)) return result.rows;
+  return []; // be defensive
+}
 
 export async function updateTeamKeys(id, { season, team_key, league_key }) {
-  // swap-safe setter to avoid unique violations on team_key (NOT NULL + UNIQUE)
-  // Pattern: if someone else owns team_key, move them to a placeholder, then set ours.
   const placeholder = `placeholder:${id}:${Date.now()}`;
 
   await query("BEGIN");
-
   try {
-    // Who (if anyone) currently owns this team_key?
-    const { rows } = await query(
+    // Lock any existing owner of this team_key so we can safely swap
+    const existingRes = await query(
       "SELECT id FROM teams WHERE team_key = $1 FOR UPDATE",
       [team_key]
     );
+    const existingRows = toRows(existingRes);
+    const existingOwner = existingRows.find((r) => r.id !== id);
 
-    if (rows.length && rows[0].id !== id) {
-      const otherId = rows[0].id;
-      // Free the key from the other row using a guaranteed-unique placeholder
-      await query(
-        "UPDATE teams SET team_key = $1 WHERE id = $2",
-        [placeholder, otherId]
-      );
+    if (existingOwner) {
+      // Free the key from the other row using a unique placeholder (NOT NULL column)
+      await query("UPDATE teams SET team_key = $1 WHERE id = $2", [
+        placeholder,
+        existingOwner.id,
+      ]);
     }
 
-    // Now safely set keys on our target row
+    // Now assign the correct key to our row
     await query(
       `UPDATE teams
          SET season = $2,
@@ -92,7 +98,6 @@ export async function updateTeamKeys(id, { season, team_key, league_key }) {
     await query("COMMIT");
   } catch (e) {
     await query("ROLLBACK");
-    // rethrow so your backfill logs the failure neatly
     throw e;
   }
 }

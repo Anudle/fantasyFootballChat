@@ -1,30 +1,28 @@
-// scripts/backfillRosters.js
 import { getAllTeams } from "../repos/teamsRepo.js";
 import { fetchAndSaveRosterForTeam } from "../yahoo/fetchAndSaveRoster.js";
 
-// simple pause to avoid hammering the API too fast
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise((r) => setTimeout(r, ms));
 }
 
 const teams = await getAllTeams();
 console.log(`Found ${teams.length} teams. Fetching rosters…`);
 
-let ok = 0;
-let fail = 0;
+let ok = 0,
+  fail = 0;
 
 for (const team of teams) {
   try {
     const players = await fetchAndSaveRosterForTeam(team);
-    console.log(
-      `✅ ${team.name} (${team.manager}): ${players.length} players saved`
-    );
+    const count = Array.isArray(players) ? players.length : 0;
+    console.log(`✅ ${team.name} (${team.manager}): ${count} players saved`);
     ok++;
   } catch (err) {
-    console.error(`❌ ${team.name} (${team.manager}): ${err.message}`);
+    console.error(`❌ ${team.name} (${team.manager}):`, err?.message || err);
+    // Optional: verbose
+    if (err?.stack) console.error(err.stack);
     fail++;
   }
-  // 300ms delay per team (tweak if Yahoo is strict)
   await sleep(300);
 }
 
